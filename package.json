@@ -1,0 +1,17 @@
+{
+  "name": "vortex-motors-web",
+  "version": "1.0.0",
+  "description": "Vortex Motors - Premium Electric Vehicles Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx live-server .",
+    "build": "echo 'Build complete'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": ["automotive", "electric-vehicles", "web-app"],
+  "author": "Vortex Motors",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

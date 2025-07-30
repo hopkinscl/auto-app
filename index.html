@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vortex Motors - Advanced Vehicles Redefined</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="logo">VORTEX</div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#vehicles">Vehicles</a></li>
+                <li><a href="#innovation">Innovation</a></li>
+                <li><a href="#sustainability">Sustainability</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#support">Support</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-outline">Find Dealer</button>
+                <button class="btn btn-primary">Build & Price</button>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">The Future of Driving</h1>
+                <p class="hero-subtitle">Experience premium vehicles engineered for performance, efficiency, and innovation</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large">Explore Models</button>
+                    <button class="btn btn-outline btn-large" onclick="openTestDriveModal(event)">Schedule Test Drive</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="hero-car.png" alt="Vortex Apex luxury sedan" class="hero-car-image">
+            </div>
+        </section>
+
+        <!-- Featured Models -->
+        <section class="featured-models" id="vehicles">
+            <div class="container">
+                <h2 class="section-title">Our Vehicle Lineup</h2>
+                <div class="models-grid">
+                    <div class="model-card">
+                        <div class="model-image">
+                            <img src="sedan.jpg" alt="Vortex Apex Sedan" class="model-car-image">
+                            <div class="model-name">APEX SEDAN</div>
+                        </div>
+                        <div class="model-info">
+                            <h3>Vortex Apex</h3>
+                            <p class="model-type">Luxury Sedan</p>
+                            <div class="model-specs">
+                                <span><i class="fas fa-road"></i> 450 mi range</span>
+                                <span><i class="fas fa-tachometer-alt"></i> 0-60 in 3.2s</span>
+                            </div>
+                            <div class="model-price">Starting at $89,900</div>
+                            <button class="btn btn-primary">Learn More</button>
+                        </div>
+                    </div>
+
+                    <div class="model-card">
+                        <div class="model-image">
+                            <img src="convertible.jpg" alt="Vortex Surge Convertible" class="model-car-image">
+                            <div class="model-name">SURGE CONVERTIBLE</div>
+                        </div>
+                        <div class="model-info">
+                            <h3>Vortex Surge</h3>
+                            <p class="model-type">Performance Convertible</p>
+                            <div class="model-specs">
+                                <span><i class="fas fa-road"></i> 380 mi range</span>
+                                <span><i class="fas fa-tachometer-alt"></i> 0-60 in 4.1s</span>
+                            </div>
+                            <div class="model-price">Starting at $72,500</div>
+                            <button class="btn btn-primary">Learn More</button>
+                        </div>
+                    </div>
+
+                    <div class="model-card">
+                        <div class="model-image">
+                            <img src="compact.jpg" alt="Vortex Pulse Compact" class="model-car-image">
+                            <div class="model-name">PULSE COMPACT</div>
+                        </div>
+                        <div class="model-info">
+                            <h3>Vortex Pulse</h3>
+                            <p class="model-type">Compact Vehicle</p>
+                            <div class="model-specs">
+                                <span><i class="fas fa-road"></i> 320 mi range</span>
+                                <span><i class="fas fa-tachometer-alt"></i> 0-60 in 5.8s</span>
+                            </div>
+                            <div class="model-price">Starting at $45,900</div>
+                            <button class="btn btn-primary">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Innovation Section -->
+        <section class="innovation" id="innovation">
+            <div class="container">
+                <div class="innovation-content">
+                    <div class="innovation-text">
+                        <h2>Leading Innovation</h2>
+                        <p>Our advanced VortexDrive technology delivers unmatched performance while maintaining optimal efficiency. Every vehicle features cutting-edge autonomous capabilities and seamless connectivity.</p>
+                        <div class="innovation-features">
+                            <div class="feature">
+                                <i class="fas fa-cog"></i>
+                                <span>Advanced Powertrain Technology</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-robot"></i>
+                                <span>Level 3 Autonomous Driving</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-wifi"></i>
+                                <span>OTA Updates</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Explore Technology</button>
+                    </div>
+                    <div class="innovation-image">
+                        <div class="innovation-placeholder">
+                            <div class="innovation-icon"></div>
+                            <div class="innovation-text">INNOVATION LAB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sustainability Section -->
+        <section class="sustainability" id="sustainability">
+            <div class="container">
+                <div class="sustainability-stats">
+                    <h2>Driving Efficiency Forward</h2>
+                    <p>Committed to a sustainable future through innovation and responsibility</p>
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <div class="stat-number">35</div>
+                            <div class="stat-label">MPG Average</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">50%</div>
+                            <div class="stat-label">Renewable Energy</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">75%</div>
+                            <div class="stat-label">Recycled Materials</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">2030</div>
+                            <div class="stat-label">Carbon Neutral</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Experience Vortex?</h2>
+                <p>Schedule a test drive and discover the future of automotive excellence</p>
+                <div class="cta-actions">
+                    <button class="btn btn-primary btn-large" onclick="openTestDriveModal(event)">Schedule Test Drive</button>
+                    <button class="btn btn-outline btn-large">Find Dealer</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vehicles</h3>
+                    <ul>
+                        <li><a href="#">Vortex Apex</a></li>
+                        <li><a href="#">Vortex Surge</a></li>
+                        <li><a href="#">Vortex Pulse</a></li>
+                        <li><a href="#">Build & Price</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Customer Service</a></li>
+                        <li><a href="#">Warranty</a></li>
+                        <li><a href="#">Service Centers</a></li>
+                        <li><a href="#">Owner Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Vortex</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Investors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Enter your email">
+                        <button class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Vortex Motors. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Test Drive Modal -->
+    <div id="testDriveModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Schedule Your Test Drive</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            
+            <!-- Progress Indicator -->
+            <div class="form-progress">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Location & Vehicle</div>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Schedule</div>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Personal Info</div>
+                </div>
+                <div class="progress-step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Additional Info</div>
+                </div>
+            </div>
+
+            <form id="testDriveForm" class="test-drive-form">
+                <!-- Step 1: Location & Vehicle -->
+                <div class="form-step active" data-step="1">
+                    <div class="form-section">
+                        <h3>Location & Vehicle</h3>
+                        <p class="step-description">Let's start by finding the right vehicle and location for your test drive.</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="zipCode">Zip Code *</label>
+                                <input type="text" id="zipCode" name="zipCode" pattern="[0-9]{5}" required>
+                                <div class="form-hint">We'll find the nearest dealership</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="vehicleModel">Preferred Vehicle *</label>
+                                <select id="vehicleModel" name="vehicleModel" required>
+                                    <option value="">Select a model</option>
+                                    <option value="apex">Vortex Apex - Luxury Sedan</option>
+                                    <option value="surge">Vortex Surge - Performance SUV</option>
+                                    <option value="pulse">Vortex Pulse - Compact EV</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dealership">Preferred Dealership</label>
+                            <select id="dealership" name="dealership">
+                                <option value="">We'll suggest the closest location</option>
+                                <option value="downtown">Vortex Motors Downtown</option>
+                                <option value="north">Vortex Motors North</option>
+                                <option value="west">Vortex Motors West Side</option>
+                                <option value="south">Vortex Motors South Bay</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Scheduling Preferences -->
+                <div class="form-step" data-step="2">
+                    <div class="form-section">
+                        <h3>Scheduling Preferences</h3>
+                        <p class="step-description">When would you like to schedule your test drive?</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="preferredDate">Preferred Date *</label>
+                                <input type="date" id="preferredDate" name="preferredDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredTime">Preferred Time *</label>
+                                <select id="preferredTime" name="preferredTime" required>
+                                    <option value="">Select time</option>
+                                    <option value="9:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="alternateDate">Alternative Date (optional)</label>
+                            <input type="date" id="alternateDate" name="alternateDate">
+                            <div class="form-hint">In case your preferred time isn't available</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Personal Information -->
+                <div class="form-step" data-step="3">
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        <p class="step-description">We'll need your contact information to confirm your appointment.</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="form-hint">We'll send confirmation details here</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <div class="form-hint">For appointment reminders</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Additional Information -->
+                <div class="form-step" data-step="4">
+                    <div class="form-section">
+                        <h3>Additional Information</h3>
+                        <p class="step-description">Help us personalize your test drive experience.</p>
+                        
+                        <div class="form-group">
+                            <label for="experience">Previous EV Experience</label>
+                            <select id="experience" name="experience">
+                                <option value="">Select experience level</option>
+                                <option value="first-time">First time considering an EV</option>
+                                <option value="researching">Currently researching EVs</option>
+                                <option value="previous-owner">Previous EV owner</option>
+                                <option value="current-owner">Current EV owner</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="questions">Questions or Special Requests</label>
+                            <textarea id="questions" name="questions" rows="3" placeholder="Any specific features you'd like to learn about or special accommodations needed?"></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                I'd like to receive updates about new Vortex models and offers
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Navigation -->
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-outline" id="cancelTestDrive">Cancel</button>
+                    <div class="nav-buttons">
+                        <button type="button" class="btn btn-outline" id="prevStep" style="display: none;">Back</button>
+                        <button type="button" class="btn btn-primary" id="nextStep">Continue</button>
+                        <button type="submit" class="btn btn-primary" id="submitForm" style="display: none;">Schedule Test Drive</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

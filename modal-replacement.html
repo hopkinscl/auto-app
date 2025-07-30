@@ -1,0 +1,177 @@
+    <!-- Test Drive Modal -->
+    <div id="testDriveModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Schedule Your Test Drive</h2>
+                <span class="modal-close">&times;</span>
+            </div>
+            
+            <!-- Progress Indicator -->
+            <div class="form-progress">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Location & Vehicle</div>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Schedule</div>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Personal Info</div>
+                </div>
+                <div class="progress-step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Additional Info</div>
+                </div>
+            </div>
+
+            <form id="testDriveForm" class="test-drive-form">
+                <!-- Step 1: Location & Vehicle -->
+                <div class="form-step active" data-step="1">
+                    <div class="form-section">
+                        <h3>Location & Vehicle</h3>
+                        <p class="step-description">Let's start by finding the right vehicle and location for your test drive.</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="zipCode">Zip Code *</label>
+                                <input type="text" id="zipCode" name="zipCode" pattern="[0-9]{5}" required>
+                                <div class="form-hint">We'll find the nearest dealership</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="vehicleModel">Preferred Vehicle *</label>
+                                <select id="vehicleModel" name="vehicleModel" required>
+                                    <option value="">Select a model</option>
+                                    <option value="apex">Vortex Apex - Luxury Sedan</option>
+                                    <option value="surge">Vortex Surge - Performance SUV</option>
+                                    <option value="pulse">Vortex Pulse - Compact EV</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dealership">Preferred Dealership</label>
+                            <select id="dealership" name="dealership">
+                                <option value="">We'll suggest the closest location</option>
+                                <option value="downtown">Vortex Motors Downtown</option>
+                                <option value="north">Vortex Motors North</option>
+                                <option value="west">Vortex Motors West Side</option>
+                                <option value="south">Vortex Motors South Bay</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Scheduling Preferences -->
+                <div class="form-step" data-step="2">
+                    <div class="form-section">
+                        <h3>Scheduling Preferences</h3>
+                        <p class="step-description">When would you like to schedule your test drive?</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="preferredDate">Preferred Date *</label>
+                                <input type="date" id="preferredDate" name="preferredDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="preferredTime">Preferred Time *</label>
+                                <select id="preferredTime" name="preferredTime" required>
+                                    <option value="">Select time</option>
+                                    <option value="9:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="alternateDate">Alternative Date (optional)</label>
+                            <input type="date" id="alternateDate" name="alternateDate">
+                            <div class="form-hint">In case your preferred time isn't available</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Personal Information -->
+                <div class="form-step" data-step="3">
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        <p class="step-description">We'll need your contact information to confirm your appointment.</p>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="form-hint">We'll send confirmation details here</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                                <div class="form-hint">For appointment reminders</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Additional Information -->
+                <div class="form-step" data-step="4">
+                    <div class="form-section">
+                        <h3>Additional Information</h3>
+                        <p class="step-description">Help us personalize your test drive experience.</p>
+                        
+                        <div class="form-group">
+                            <label for="experience">Previous EV Experience</label>
+                            <select id="experience" name="experience">
+                                <option value="">Select experience level</option>
+                                <option value="first-time">First time considering an EV</option>
+                                <option value="researching">Currently researching EVs</option>
+                                <option value="previous-owner">Previous EV owner</option>
+                                <option value="current-owner">Current EV owner</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="questions">Questions or Special Requests</label>
+                            <textarea id="questions" name="questions" rows="3" placeholder="Any specific features you'd like to learn about or special accommodations needed?"></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                I'd like to receive updates about new Vortex models and offers
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Navigation -->
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-outline" id="cancelTestDrive">Cancel</button>
+                    <div class="nav-buttons">
+                        <button type="button" class="btn btn-outline" id="prevStep" style="display: none;">Back</button>
+                        <button type="button" class="btn btn-primary" id="nextStep">Continue</button>
+                        <button type="submit" class="btn btn-primary" id="submitForm" style="display: none;">Schedule Test Drive</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
