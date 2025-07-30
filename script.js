@@ -428,7 +428,7 @@ function initializeTestDriveModal() {
     
     if (prevBtn) {
         prevBtn.addEventListener('click', () => {
-            goToStep(currentStep - 1);
+            goToStep(currentStep + 1);
         });
     }
     
@@ -711,6 +711,127 @@ if (document.readyState === 'loading') {
     });
 } else {
     setTimeout(initializeTestDriveModal, 0);
+}
+
+// Testimonial Carousel Functionality
+let currentTestimonial = 0;
+let testimonialSlides;
+let testimonialDots;
+let nextTestimonialBtn;
+let prevTestimonialBtn;
+let testimonialInterval;
+
+function showTestimonial(index) {
+    // Hide all slides
+    testimonialSlides.forEach(slide => {
+        slide.classList.remove('active');
+    });
+    
+    // Remove active class from all dots
+    testimonialDots.forEach(dot => {
+        dot.classList.remove('active');
+    });
+    
+    // Show current slide and activate corresponding dot
+    if (testimonialSlides[index]) {
+        testimonialSlides[index].classList.add('active');
+    }
+    if (testimonialDots[index]) {
+        testimonialDots[index].classList.add('active');
+    }
+    
+    currentTestimonial = index;
+}
+
+function nextTestimonial() {
+    const nextIndex = (currentTestimonial + 1) % testimonialSlides.length;
+    showTestimonial(nextIndex);
+}
+
+function prevTestimonial() {
+    const prevIndex = currentTestimonial === 0 ? testimonialSlides.length - 1 : currentTestimonial - 1;
+    showTestimonial(prevIndex);
+}
+
+function startTestimonialAutoplay() {
+    testimonialInterval = setInterval(nextTestimonial, 6000); // Change every 6 seconds
+}
+
+function stopTestimonialAutoplay() {
+    if (testimonialInterval) {
+        clearInterval(testimonialInterval);
+    }
+}
+
+// Initialize testimonial carousel
+function initializeTestimonialCarousel() {
+    // Get DOM elements
+    testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    testimonialDots = document.querySelectorAll('.testimonial-dots .dot');
+    nextTestimonialBtn = document.getElementById('nextTestimonial');
+    prevTestimonialBtn = document.getElementById('prevTestimonial');
+    
+    if (testimonialSlides.length === 0) {
+        console.log('No testimonial slides found');
+        return;
+    }
+    
+    // Set up navigation buttons
+    if (nextTestimonialBtn) {
+        nextTestimonialBtn.addEventListener('click', () => {
+            nextTestimonial();
+            stopTestimonialAutoplay();
+            startTestimonialAutoplay(); // Restart autoplay
+        });
+    }
+    
+    if (prevTestimonialBtn) {
+        prevTestimonialBtn.addEventListener('click', () => {
+            prevTestimonial();
+            stopTestimonialAutoplay();
+            startTestimonialAutoplay(); // Restart autoplay
+        });
+    }
+    
+    // Set up dot navigation
+    testimonialDots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showTestimonial(index);
+            stopTestimonialAutoplay();
+            startTestimonialAutoplay(); // Restart autoplay
+        });
+    });
+    
+    // Start autoplay
+    startTestimonialAutoplay();
+    
+    // Pause autoplay when user hovers over carousel
+    const carousel = document.querySelector('.testimonial-carousel');
+    if (carousel) {
+        carousel.addEventListener('mouseenter', stopTestimonialAutoplay);
+        carousel.addEventListener('mouseleave', startTestimonialAutoplay);
+    }
+    
+    // Pause autoplay when page is not visible
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            stopTestimonialAutoplay();
+        } else {
+            startTestimonialAutoplay();
+        }
+    });
+    
+    console.log('✨ Testimonial carousel initialized');
+}
+
+// Initialize testimonial carousel when DOM is loaded
+document.addEventListener('DOMContentLoaded', initializeTestimonialCarousel);
+
+// Also initialize immediately in case DOMContentLoaded already fired
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTestimonialCarousel);
+} else {
+    initializeTestimonialCarousel();
 }
 
 console.log('🚗 Vortex Motors Web App Loaded Successfully!');
