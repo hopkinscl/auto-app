@@ -1,6 +1,6 @@
 # Vortex Motors - Electric Vehicle Manufacturer Website
 
-A modern, responsive web application for Vortex Motors, a fictional premium electric vehicle manufacturer inspired by automotive industry leaders.
+A modern, responsive web application for Vortex Motors, a fictional premium electric vehicle manufacturer.
 
 ## 🚗 Brand Overview
 
